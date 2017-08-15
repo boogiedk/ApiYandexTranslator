@@ -27,20 +27,30 @@ namespace Translator
 			obj = new ApiYandex();
 			}
 
+		string lang = "en-ru";
+		string inTextForTranslate;
+		int count = 0;
+
 		private void Button_Click(object sender, RoutedEventArgs e)
 			{
-			string lang;
-
-			if(RuEn.IsChecked==true)
+			if (lang=="en-ru")
 				{
+				langlabel.Content = "Русский -> Английский";
 				lang = "ru-en";
 				}
 			else
 				{
 				lang = "en-ru";
+				langlabel.Content = "Английский -> Русский";
 				}
-			outText.Text = obj.Translate(inText.Text, lang);
 			}
-		
+
+		private void inText_TextChanged(object sender, TextChangedEventArgs e)
+			{
+			inTextForTranslate = inText.Text;
+		    outText.Text = obj.Translate(inText.Text, lang);
+			count = inTextForTranslate.Length;
+			countlabel.Content = count;
+			}
 		}
 	}
