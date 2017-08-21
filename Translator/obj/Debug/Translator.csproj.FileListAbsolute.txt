@@ -1,7 +1,6 @@
 c:\users\boogie\documents\visual studio 2013\Projects\Translator\Translator\bin\Debug\Translator.exe.config
 c:\users\boogie\documents\visual studio 2013\Projects\Translator\Translator\bin\Debug\Translator.exe
 c:\users\boogie\documents\visual studio 2013\Projects\Translator\Translator\bin\Debug\Translator.pdb
-c:\users\boogie\documents\visual studio 2013\Projects\Translator\Translator\obj\Debug\Translator.csprojResolveAssemblyReference.cache
 c:\users\boogie\documents\visual studio 2013\Projects\Translator\Translator\obj\Debug\MainWindow.baml
 c:\users\boogie\documents\visual studio 2013\Projects\Translator\Translator\obj\Debug\MainWindow.g.cs
 c:\users\boogie\documents\visual studio 2013\Projects\Translator\Translator\obj\Debug\App.g.cs
@@ -14,3 +13,7 @@ c:\users\boogie\documents\visual studio 2013\Projects\Translator\Translator\obj\
 c:\users\boogie\documents\visual studio 2013\Projects\Translator\Translator\bin\Debug\Newtonsoft.Json.dll
 c:\users\boogie\documents\visual studio 2013\Projects\Translator\Translator\bin\Debug\xNet.dll
 c:\users\boogie\documents\visual studio 2013\Projects\Translator\Translator\bin\Debug\Newtonsoft.Json.xml
+C:\Users\boogie\documents\visual studio 2013\Projects\Translator\Translator\bin\Debug\Hardcodet.Wpf.TaskbarNotification.dll
+C:\Users\boogie\documents\visual studio 2013\Projects\Translator\Translator\bin\Debug\Hardcodet.Wpf.TaskbarNotification.pdb
+C:\Users\boogie\documents\visual studio 2013\Projects\Translator\Translator\bin\Debug\Hardcodet.Wpf.TaskbarNotification.xml
+C:\Users\boogie\documents\visual studio 2013\Projects\Translator\Translator\obj\Debug\Translator.csprojResolveAssemblyReference.cache

@@ -1,11 +1,25 @@
 ﻿<Window x:Class="Translator.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        xmlns:tb="http://www.hardcodet.net/taskbar"
+        xmlns:tb="http://www.hardcodet.net/taskbar" 
         Title="Translator" Height="325" Width="255" ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
     <Grid Background="Bisque" Height="290" Width="240">
-        <Button Content="О" HorizontalAlignment="Left" Margin="104,143,0,0" VerticalAlignment="Top" Width="30" Click="Button_Click" >
-        </Button>
+
+        <tb:TaskbarIcon
+          IconSource="Icon.ico"
+          ToolTipText="hello world">
+            <!-- Set a simple context menu  -->
+            <tb:TaskbarIcon.ContextMenu>
+                <ContextMenu
+
+      Background="White">
+                    <MenuItem Header="Развернуть приложение" />
+                    <MenuItem Name="ClickBuff" Click="TurnBuffTranslate" Header="Включить буффер-перевод"/>
+                </ContextMenu>
+            </tb:TaskbarIcon.ContextMenu>
+        </tb:TaskbarIcon>
+
+        <Button Content="О" HorizontalAlignment="Left" Margin="104,143,0,0" VerticalAlignment="Top" Width="30" Click="Button_Click"/>
         <TextBox x:Name="inText" HorizontalAlignment="Left" Height="102" Margin="10,10,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="219" Background="#FFFDFDFD" FontSize="22" FontWeight="Bold" TextChanged="inText_TextChanged"/>
         <TextBox x:Name="outText" HorizontalAlignment="Left" Height="102" Margin="10,178,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="219" Background="White" FontSize="22" FontWeight="Bold">
             <TextBox.BorderBrush>
@@ -18,5 +32,6 @@
         </TextBox>
         <Label Name="langlabel" Content="Английский -> Русский" HorizontalAlignment="Left" Margin="51,117,0,0" VerticalAlignment="Top" Width="141"/>
         <Label Name="countlabel" Content="0" HorizontalAlignment="Left" Margin="10,117,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="count_wordslabel" Content="0" HorizontalAlignment="Left" Margin="10,152,0,0" VerticalAlignment="Top" Foreground="{Binding Foreground}"/>
     </Grid>
 </Window>
