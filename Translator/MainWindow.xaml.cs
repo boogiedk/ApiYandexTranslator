@@ -32,6 +32,7 @@ namespace Translator
 			count_wordslabel.Content = Properties.Settings.Default.count_words;
 			ChangeColorTextInLabel();
 			Loaded += MainWindow_Loaded;
+			
 			//
 			}
 
@@ -81,14 +82,17 @@ namespace Translator
 
 			if (buffer_str != "" && buffer_str != null)
 				{
-				MyNotifyIcon.ShowBalloonTip(buffer_str, buffer_str_trns, BalloonIcon.Info);
+					MyNotifyIcon.ShowBalloonTip		(buffer_str, buffer_str_trns, BalloonIcon.Info);
 				}
 			}
 
 		private void GetStringFromBuffer()
 			{
 				{
-				buffer_str = Clipboard.GetText();
+				if (turn)
+					buffer_str = Clipboard.GetText();
+				else
+					buffer_str = "";
 				}
 			}
 
@@ -128,14 +132,16 @@ namespace Translator
 			{
 			if (msg == Win32.WM_CLIPBOARDUPDATE)
 				{
-				// Буфер обмена обновился, в переменной text лежит скопированный текст
-				var text = Clipboard.GetText();
-
-				buffer_str = text.ToString(); // Запихаем в текстбокс для отображения
 				ShowStandardBalloon();
 				}
 
 			return IntPtr.Zero;
+			}
+
+		private void MenuItemSetting_Click(object sender, RoutedEventArgs e)
+			{
+			SettingPage obj_open = new SettingPage();
+			obj_open.Show();
 			}
 		}
 	}

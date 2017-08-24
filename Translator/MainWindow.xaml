@@ -3,7 +3,7 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:tb="http://www.hardcodet.net/taskbar" 
         Title="Translator" Height="325" Width="255" ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
-    <Grid Background="Bisque" Height="290" Width="240">
+    <Grid Background="Azure" Height="290" Width="240">
 
         <tb:TaskbarIcon
           IconSource="Icon.ico"
@@ -19,9 +19,14 @@
             </tb:TaskbarIcon.ContextMenu>
         </tb:TaskbarIcon>
 
-        <Button Content="О" HorizontalAlignment="Left" Margin="104,143,0,0" VerticalAlignment="Top" Width="30" Click="Button_Click"/>
-        <TextBox x:Name="inText" HorizontalAlignment="Left" Height="102" Margin="10,10,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="219" Background="#FFFDFDFD" FontSize="22" FontWeight="Bold" TextChanged="inText_TextChanged"/>
-        <TextBox x:Name="outText" HorizontalAlignment="Left" Height="102" Margin="10,178,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="219" Background="White" FontSize="22" FontWeight="Bold">
+        <Menu Background="Transparent">
+            <MenuItem Header="Настройки">
+                <MenuItem Header="Настройка перевода" Click="MenuItemSetting_Click"></MenuItem>
+            </MenuItem>
+        </Menu>
+        <Button Content="О" HorizontalAlignment="Left" Margin="105,173,0,0" VerticalAlignment="Top" Width="30" Click="Button_Click"/>
+        <TextBox x:Name="inText" HorizontalAlignment="Left" Height="80" Margin="10,57,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="219" Background="#FFFDFDFD" FontSize="22" FontWeight="Bold" TextChanged="inText_TextChanged"/>
+        <TextBox x:Name="outText" HorizontalAlignment="Left" Height="80" Margin="10,200,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="219" Background="White" FontSize="22" FontWeight="Bold">
             <TextBox.BorderBrush>
                 <LinearGradientBrush EndPoint="0,20" MappingMode="Absolute" StartPoint="0,0">
                     <GradientStop Color="#FFABADB3" Offset="0.05"/>
@@ -30,8 +35,8 @@
                 </LinearGradientBrush>
             </TextBox.BorderBrush>
         </TextBox>
-        <Label Name="langlabel" Content="Английский -> Русский" HorizontalAlignment="Left" Margin="51,117,0,0" VerticalAlignment="Top" Width="141"/>
-        <Label Name="countlabel" Content="0" HorizontalAlignment="Left" Margin="10,117,0,0" VerticalAlignment="Top"/>
-        <Label x:Name="count_wordslabel" Content="0" HorizontalAlignment="Left" Margin="10,152,0,0" VerticalAlignment="Top" Foreground="{Binding Foreground}"/>
+        <Label Name="langlabel" Content="Английский -> Русский" HorizontalAlignment="Left" Margin="51,142,0,0" VerticalAlignment="Top" Width="141"/>
+        <Label Name="countlabel" Content="0" HorizontalAlignment="Left" Margin="10,142,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="count_wordslabel" Content="0" HorizontalAlignment="Left" Margin="10,169,0,0" VerticalAlignment="Top" Foreground="{Binding Foreground}"/>
     </Grid>
 </Window>

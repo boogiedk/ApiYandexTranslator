@@ -34,5 +34,29 @@ namespace Translator.Properties {
                 this["count_words"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool buffer_translate {
+            get {
+                return ((bool)(this["buffer_translate"]));
+            }
+            set {
+                this["buffer_translate"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string combinate_trns {
+            get {
+                return ((string)(this["combinate_trns"]));
+            }
+            set {
+                this["combinate_trns"] = value;
+            }
+        }
     }
 }

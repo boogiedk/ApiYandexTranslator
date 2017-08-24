@@ -17,3 +17,5 @@ C:\Users\boogie\documents\visual studio 2013\Projects\Translator\Translator\bin\
 C:\Users\boogie\documents\visual studio 2013\Projects\Translator\Translator\bin\Debug\Hardcodet.Wpf.TaskbarNotification.pdb
 C:\Users\boogie\documents\visual studio 2013\Projects\Translator\Translator\bin\Debug\Hardcodet.Wpf.TaskbarNotification.xml
 C:\Users\boogie\documents\visual studio 2013\Projects\Translator\Translator\obj\Debug\Translator.csprojResolveAssemblyReference.cache
+C:\Users\boogie\documents\visual studio 2013\Projects\Translator\Translator\obj\Debug\SettingPage.baml
+C:\Users\boogie\documents\visual studio 2013\Projects\Translator\Translator\obj\Debug\SettingPage.g.cs
