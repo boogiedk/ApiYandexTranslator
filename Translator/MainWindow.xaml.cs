@@ -16,6 +16,7 @@ using System.Drawing;
 using Hardcodet.Wpf.TaskbarNotification;
 using System.Runtime.InteropServices;
 using System.Windows.Interop;
+using System.Text.RegularExpressions;
 
 namespace Translator
 	{
@@ -29,11 +30,7 @@ namespace Translator
 			{
 			InitializeComponent();
 			obj = new ApiYandex();
-			count_wordslabel.Content = Properties.Settings.Default.count_words;
-			ChangeColorTextInLabel();
 			Loaded += MainWindow_Loaded;
-			
-			//
 			}
 
 		string lang = "en-ru";
@@ -42,37 +39,12 @@ namespace Translator
 		string buffer_str_trns = "";
 		bool turn = false;
 
-		private void Button_Click(object sender, RoutedEventArgs e)
-			{
-			if (lang == "en-ru")
-				{
-				lang = "ru-en";
-				langlabel.Content = "Русский -> Английский";
-				}
-			else
-				{
-				lang = "en-ru";
-				langlabel.Content = "Английский -> Русский";
-				}
-			}
-
 		private void inText_TextChanged(object sender, TextChangedEventArgs e)
 			{
-		   outText.Text = obj.Translate(inText.Text, lang);
-			Properties.Settings.Default.count_words += count;
-			count_wordslabel.Content = Properties.Settings.Default.count_words;
+			outText.Text = obj.Translate(inText.Text, lang);
 			count = inText.Text.Length;
 			countlabel.Content = count;
-			Properties.Settings.Default.Save();
-			ChangeColorTextInLabel();
-			}
-
-		private void ChangeColorTextInLabel()
-			{
-			if (Properties.Settings.Default.count_words>=8000)
-				{
-				count_wordslabel.Foreground = System.Windows.Media.Brushes.Red;
-				}
+			IdentifyEnterLang();
 			}
 
 		private void ShowStandardBalloon()
@@ -80,9 +52,9 @@ namespace Translator
 			TaskbarIcon MyNotifyIcon = new TaskbarIcon();
 			TranslateStringFromBuffer();
 
-			if (buffer_str != "" && buffer_str != null)
+			if (buffer_str != "" && buffer_str != null && turn)
 				{
-					MyNotifyIcon.ShowBalloonTip		(buffer_str, buffer_str_trns, BalloonIcon.Info);
+				MyNotifyIcon.ShowBalloonTip(buffer_str, buffer_str_trns, BalloonIcon.Info);
 				}
 			}
 
@@ -98,11 +70,11 @@ namespace Translator
 
 		private void TranslateStringFromBuffer()
 			{
-				GetStringFromBuffer();
-				if (buffer_str != "" && buffer_str != null)
-					{
-					buffer_str_trns = obj.Translate(buffer_str, lang);
-					}
+			GetStringFromBuffer();
+			if (buffer_str != "" && buffer_str != null)
+				{
+				buffer_str_trns = obj.Translate(buffer_str, lang);
+				}
 			}
 
 		private void TurnBuffTranslate(object sender, RoutedEventArgs e)
@@ -142,6 +114,22 @@ namespace Translator
 			{
 			SettingPage obj_open = new SettingPage();
 			obj_open.Show();
+			}
+
+		private void IdentifyEnterLang()
+			{
+			string inTextEnter = inText.Text;
+
+			if (Regex.IsMatch(inTextEnter, "^[A-Za-z]+$") == true)
+				{
+				lang = "en-ru";
+				langlabel.Content = "Английский > Русский";
+				}
+			else
+				{
+				lang = "ru-en";
+				langlabel.Content = "Русский > Английский";
+				}
 			}
 		}
 	}
