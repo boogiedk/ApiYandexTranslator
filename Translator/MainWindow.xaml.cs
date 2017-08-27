@@ -37,6 +37,7 @@ namespace Translator
 		int count = 0;
 		string buffer_str = "";
 		string buffer_str_trns = "";
+		string inTextEnter = "";
 		bool turn = false;
 
 		private void inText_TextChanged(object sender, TextChangedEventArgs e)
@@ -62,7 +63,9 @@ namespace Translator
 			{
 				{
 				if (turn)
+					{
 					buffer_str = Clipboard.GetText();
+					}
 				else
 					buffer_str = "";
 				}
@@ -119,8 +122,7 @@ namespace Translator
 		private void IdentifyEnterLang()
 			{
 			string inTextEnter = inText.Text;
-
-			if (Regex.IsMatch(inTextEnter, "^[A-Za-z]+$") == true)
+			if (Regex.IsMatch(inTextEnter, "^[A-Za-z' ']+$") == true)
 				{
 				lang = "en-ru";
 				langlabel.Content = "Английский > Русский";
@@ -130,6 +132,16 @@ namespace Translator
 				lang = "ru-en";
 				langlabel.Content = "Русский > Английский";
 				}
+			}
+
+		private void MenuItem_Click(object sender, RoutedEventArgs e)
+			{
+
+			}
+
+		private void AboutApplication(object sender, RoutedEventArgs e)
+			{
+			MessageBox.Show("BOOGIE INC 2017 (c)");
 			}
 		}
 	}
