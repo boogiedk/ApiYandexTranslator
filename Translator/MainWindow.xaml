@@ -19,14 +19,7 @@
             </tb:TaskbarIcon.ContextMenu>
         </tb:TaskbarIcon>
 
-        <Menu Background="Transparent" Height="245" Width="240">
-            <MenuItem Header="Настройки">
-                <MenuItem Header="Настройка перевода" Click="MenuItemSetting_Click"></MenuItem>
-            </MenuItem>
-            <MenuItem Header="О приложении">
-                <MenuItem Header="Приложение" Click="AboutApplication"></MenuItem>
-            </MenuItem>
-        </Menu>
+        <Menu Background="Transparent" Height="245" Width="240"/>
         <TextBox x:Name="inText" HorizontalAlignment="Left" Height="80" Margin="11,28,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="219" Background="#FFFDFDFD" FontSize="18" FontWeight="Bold" TextChanged="inText_TextChanged"/>
         <TextBox x:Name="outText" HorizontalAlignment="Left" Height="80" Margin="10,144,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="219" Background="White" FontSize="18" FontWeight="Bold">
             <TextBox.BorderBrush>

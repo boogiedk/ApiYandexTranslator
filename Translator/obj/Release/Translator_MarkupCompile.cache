@@ -4,16 +4,16 @@
 winexe
 C#
 .cs
-C:\Users\boogie\Source\Repos\app-yandex-translate\Translator\obj\Debug\
+C:\Users\boogie\Source\Repos\app-yandex-translate\Translator\obj\Release\
 Translator
 none
 false
-DEBUG;TRACE
+TRACE
 C:\Users\boogie\Source\Repos\app-yandex-translate\Translator\App.xaml
 11151548125
 
 7-739287535
-19-1010054706
+18-22725185
 MainWindow.xaml;
 
 False
